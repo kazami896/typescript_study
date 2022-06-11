@@ -47,7 +47,7 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 	let frame = 0;
 
 	// テストのために背景を透過していない32x32のpng画像
-	const image = await game.loadImage('./test.png');
+	const image = await game.loadImage('./test.PNG');
 
 	// ブラウザの描画に合わせてだいたい60FPSくらいでいい感じに呼び出される処理の追加
 	game.onUpdate = (game) => {
