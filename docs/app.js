@@ -84,7 +84,7 @@ class SimpleCanvasGameLibrary {
 SimpleCanvasGameLibrary.prepare().then(async (game) => {
     const position = { x: 320, y: 240 };
     let frame = 0;
-    const image = await game.loadImage('./test.png');
+    const image = await game.loadImage('./test.PNG');
     game.onUpdate = (game) => {
         ++frame;
         game.clear();
