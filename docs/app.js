@@ -84,7 +84,6 @@ class SimpleCanvasGameLibrary {
 SimpleCanvasGameLibrary.prepare().then(async (game) => {
     const position = { x: 320, y: 240 };
     let frame = 0;
-    const image = await game.loadImage('./test.png');
     game.onUpdate = (game) => {
         ++frame;
         game.clear();
@@ -92,7 +91,6 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
         game.draw.fillRect(0, 0, game.width, game.height);
         game.draw.fillStyle = 'gray';
         game.draw.fillRect(10, 10, game.width - 20, game.height - 20);
-        game.draw.drawImage(image, 16, 0, 16, 16, 320, 240, 32, 32);
         game.draw.fillStyle = '#ff0000';
         game.draw.beginPath();
         game.draw.arc(position.x, position.y, 10, 0, Math.PI * 2);
