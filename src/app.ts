@@ -47,7 +47,7 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 	let frame = 0;
 
 	// テストのために背景を透過していない32x32のpng画像
-	const image = await game.loadImage('./test.PNG');
+	const image = await game.loadImage('./panel.png.png');
 
 	// ブラウザの描画に合わせてだいたい60FPSくらいでいい感じに呼び出される処理の追加
 	game.onUpdate = (game) => {
@@ -70,8 +70,8 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 		game.draw.fillRect(10, 10, game.width - 20, game.height - 20);
 
 		// 画像を描画
-		// (16, 0)から16x16の画像を切り出し(320, 240)の位置に32x32で描画
-		game.draw.drawImage(image, 16, 0, 16, 16, 320, 240, 32, 32);
+		// (0, 0)から100x50の画像を切り出し(101, 102)の位置に100x50で描画
+		game.draw.drawImage(image, 0, 0, 100, 50, 102, 102, 100, 50);
 
 		// 座標の位置に円を描く
 		game.draw.fillStyle = '#ff0000'; // redでも良い
