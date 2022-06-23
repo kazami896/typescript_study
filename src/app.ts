@@ -48,7 +48,7 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 	let anime_frame = 0;
 
 	// charaのpng画像
-	const image_char = await game.loadImage('./char01.png');
+	const image_char = await game.loadImage('./char01.PNG');
 
 	// ブラウザの描画に合わせてだいたい60FPSくらいでいい感じに呼び出される処理の追加
 	game.onUpdate = (game) => {
