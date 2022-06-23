@@ -94,6 +94,36 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
         game.draw.fillRect(0, 0, game.width, game.height);
         game.draw.fillStyle = 'gray';
         game.draw.fillRect(10, 10, game.width - 20, game.height - 20);
+        switch (anime_frame) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+                game.draw.drawImage(image_char, 0, 0, 100, 100, 102, 102, 100, 100);
+                break;
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+                game.draw.drawImage(image_char, 100, 0, 100, 100, 102, 102, 100, 100);
+                break;
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+                game.draw.drawImage(image_char, 200, 0, 100, 100, 102, 102, 100, 100);
+                anime_frame = 0;
+                break;
+        }
         game.draw.fillStyle = '#ff0000';
         game.draw.beginPath();
         game.draw.arc(position.x, position.y, 10, 0, Math.PI * 2);
