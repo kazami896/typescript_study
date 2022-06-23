@@ -71,7 +71,7 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 		// 長方形を塗りつぶしで描画
 		game.draw.fillRect(10, 10, game.width - 20, game.height - 20);
 
-		/*
+	
 		// 画像を描画
 		// (0, 0)から100x100の画像を切り出し(101, 102)の位置に100x50で描画
 		switch(anime_frame) {
@@ -104,7 +104,7 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 				anime_frame = 0;
 				break;
 		}
-		*/
+	
 		// 座標の位置に円を描く
 		game.draw.fillStyle = '#ff0000'; // redでも良い
 		game.draw.beginPath();
