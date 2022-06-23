@@ -45,14 +45,16 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 	const position = { x: 320, y: 240 };
 	// フレーム数
 	let frame = 0;
+	let anime_frame = 0;
 
-	// テストのために背景を透過していない32x32のpng画像
-	const image = await game.loadImage('./panel.png.png');
+	// charaのpng画像
+	const image_char = await game.loadImage('./char01.png');
 
 	// ブラウザの描画に合わせてだいたい60FPSくらいでいい感じに呼び出される処理の追加
 	game.onUpdate = (game) => {
 		// フレーム数をカウントアップ
 		++frame;
+		++anime_frame;
 
 		// キャンバスをクリア
 		game.clear();
@@ -70,9 +72,37 @@ SimpleCanvasGameLibrary.prepare().then(async (game) => {
 		game.draw.fillRect(10, 10, game.width - 20, game.height - 20);
 
 		// 画像を描画
-		// (0, 0)から100x50の画像を切り出し(101, 102)の位置に100x50で描画
-		game.draw.drawImage(image, 0, 0, 100, 50, 102, 102, 100, 50);
-
+		// (0, 0)から100x100の画像を切り出し(101, 102)の位置に100x50で描画
+		switch(anime_frame) {
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+				game.draw.drawImage(image_char, 0, 0, 100, 100, 102, 102, 100, 100);
+				break;
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+				game.draw.drawImage(image_char, 100, 0,100,100,102,102,100,100);
+				break;
+			case 15:
+			case 16:
+			case 17:
+			case 18:
+			case 19:
+			case 20:
+			case 21:
+				game.draw.drawImage(image_char, 200, 0, 100, 100, 102, 102, 100, 100);
+				anime_frame = 0;
+				break;
+		}
 		// 座標の位置に円を描く
 		game.draw.fillStyle = '#ff0000'; // redでも良い
 		game.draw.beginPath();
