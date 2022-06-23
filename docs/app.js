@@ -84,15 +84,46 @@ class SimpleCanvasGameLibrary {
 SimpleCanvasGameLibrary.prepare().then(async (game) => {
     const position = { x: 320, y: 240 };
     let frame = 0;
-    const image = await game.loadImage('./panel.png.png');
+    let anime_frame = 0;
+    const image_char = await game.loadImage('./char01.png');
     game.onUpdate = (game) => {
         ++frame;
+        ++anime_frame;
         game.clear();
         game.draw.fillStyle = 'blue';
         game.draw.fillRect(0, 0, game.width, game.height);
         game.draw.fillStyle = 'gray';
         game.draw.fillRect(10, 10, game.width - 20, game.height - 20);
-        game.draw.drawImage(image, 0, 0, 100, 50, 102, 102, 100, 50);
+        switch (anime_frame) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+                game.draw.drawImage(image_char, 0, 0, 100, 100, 102, 102, 100, 100);
+                break;
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+                game.draw.drawImage(image_char, 100, 0, 100, 100, 102, 102, 100, 100);
+                break;
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+                game.draw.drawImage(image_char, 200, 0, 100, 100, 102, 102, 100, 100);
+                anime_frame = 0;
+                break;
+        }
         game.draw.fillStyle = '#ff0000';
         game.draw.beginPath();
         game.draw.arc(position.x, position.y, 10, 0, Math.PI * 2);
