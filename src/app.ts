@@ -43,6 +43,7 @@
 SimpleCanvasGameLibrary.prepare().then(async (game) => {
 	// 円のデータ
 	const position = { x: 320, y: 240 };
+	// const objapple = { x:70, y:100};
 	// フレーム数
 	let frame = 0;
 	let anime_frame = 0;
